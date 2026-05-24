@@ -363,7 +363,7 @@ function renderAuth(registerMode = false) {
   app.innerHTML = `
     <div class="auth-wrap">
       <div class="auth-card">
-        <div class="auth-logo">StudyFlow</div>
+        <div class="auth-logo">Le Planning Efficace</div>
         <div class="auth-tagline">Planifie, révise, progresse.</div>
         <div class="auth-tabs">
           <button class="auth-tab ${registerMode ? "" : "active"}" onclick="renderAuth(false)">Connexion</button>
@@ -979,11 +979,11 @@ function finishPhase() {
     focus.sessionsToday++;
     updateUser(user => addMinutes(user, focus.workMin, focus.subjectId));
     focus.phase = "pause";
-    notify("StudyFlow", "Pause bien méritée.");
+    notify("Le Planning Efficace", "Pause bien méritée.");
     toast("Pause !", "success");
   } else {
     focus.phase = "work";
-    notify("StudyFlow", "On repart au travail.");
+    notify("Le Planning Efficace", "On repart au travail.");
     toast("Au travail !", "info");
   }
   focus.elapsed = 0;
@@ -1062,7 +1062,7 @@ function exportStats() {
     sessions: user.sessions,
     tasks: allItems(user)
   };
-  downloadFile(`studyflow-stats-${todayStr()}.json`, JSON.stringify(payload, null, 2), "application/json");
+  downloadFile(`le-planning-efficace-stats-${todayStr()}.json`, JSON.stringify(payload, null, 2), "application/json");
 }
 
 function renderProfile() {
@@ -1192,7 +1192,7 @@ function updateMaxSession(value) {
 
 function exportData() {
   const user = getUser();
-  downloadFile(`studyflow-${user.username}-${todayStr()}.json`, JSON.stringify(user, null, 2), "application/json");
+  downloadFile(`le-planning-efficace-${user.username}-${todayStr()}.json`, JSON.stringify(user, null, 2), "application/json");
 }
 
 function importDataPrompt() {
