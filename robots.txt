@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julianogueiracroucrou-collab.github.io/Le-Planning-Efficace/sitemap.xml
